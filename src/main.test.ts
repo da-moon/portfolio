@@ -1,8 +1,21 @@
 /// <reference lib="deno.ns" />
-import { assertStringIncludes } from "jsr:@std/assert";
+import { assertStringIncludes } from "@std/assert";
+import { PERSONAL } from "./constants/data.ts";
 
-Deno.test("renders hello world copy", () => {
-  const html = `<div><h1>Hello, World!</h1><p>Your GitHub Pages site is live.</p></div>`;
-  assertStringIncludes(html, "Hello, World!");
-  assertStringIncludes(html, "GitHub Pages site is live");
+Deno.test("renders portfolio hero content", () => {
+  const html = `<h1>${PERSONAL.name}</h1><p>${PERSONAL.title}</p>`;
+  assertStringIncludes(html, "Damoon Azarpazhooh");
+  assertStringIncludes(html, "Principal Cloud Architect");
+});
+
+Deno.test("personal info is properly anonymized", () => {
+  // Ensure no client names appear in personal data
+  const personalString = JSON.stringify(PERSONAL);
+  // These should NOT appear in the portfolio
+  const forbiddenTerms = ["T-Mobile", "Scotiabank", "Badal", "OTH"];
+  for (const term of forbiddenTerms) {
+    if (personalString.includes(term)) {
+      throw new Error(`Found forbidden term "${term}" in personal data`);
+    }
+  }
 });

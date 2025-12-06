@@ -3,10 +3,13 @@
     "dev": "deno run -A npm:vite",
     "build": "deno run -A npm:vite build",
     "preview": "deno run -A npm:vite preview",
-    "typecheck": "deno run -A npm:tsc --noEmit",
+    "typecheck": "deno run -A npm:typescript/tsc --noEmit",
     "fmt": "deno fmt",
     "lint": "deno lint",
     "test": "deno test"
+  },
+  "imports": {
+    "@std/assert": "jsr:@std/assert@1"
   },
   "lint": {
     "exclude": ["dist", "node_modules"]
