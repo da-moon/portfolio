@@ -1,6 +1,6 @@
 /// <reference lib="deno.ns" />
 import { assertEquals } from "@std/assert";
-import { PERSONAL } from "../../constants/data.ts";
+import { PERSONAL } from "../../constants/index.ts";
 
 Deno.test("hero uses personal data correctly", () => {
   // Verify personal info is available for hero

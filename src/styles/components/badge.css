@@ -1,0 +1,33 @@
+/* ============================================
+   Badge/Tag Component
+   ============================================ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-xs) var(--space-sm);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: var(--accent-cyan-dim);
+  color: var(--accent-cyan);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.badge:hover {
+  background: rgba(0, 212, 255, 0.25);
+  border-color: var(--accent-cyan);
+}
+
+.badge--teal {
+  background: rgba(20, 184, 166, 0.15);
+  color: var(--accent-teal);
+  border-color: rgba(20, 184, 166, 0.3);
+}
+
+.badge--teal:hover {
+  background: rgba(20, 184, 166, 0.25);
+  border-color: var(--accent-teal);
+}

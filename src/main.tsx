@@ -1,7 +1,7 @@
 // Entry point - Renders the App to DOM
 import { render } from "preact";
 import { App } from "./app.tsx";
-import "./style.css";
+import "./styles/index.css";
 
 const root = document.getElementById("app");
 

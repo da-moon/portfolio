@@ -1,6 +1,6 @@
 /// <reference lib="deno.ns" />
 import { assertStringIncludes } from "@std/assert";
-import { PERSONAL } from "./constants/data.ts";
+import { PERSONAL } from "./constants/index.ts";
 
 Deno.test("renders portfolio hero content", () => {
   const html = `<h1>${PERSONAL.name}</h1><p>${PERSONAL.title}</p>`;

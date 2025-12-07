@@ -1,0 +1,73 @@
+/* ============================================
+   Code Syntax Highlighting
+   ============================================ */
+
+/* Generic code block wrapper */
+.code-block {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  overflow-x: auto;
+}
+
+.code-block--inline {
+  display: inline;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+}
+
+/* Syntax token classes */
+.syn-keyword {
+  color: var(--syntax-keyword);
+}
+
+.syn-string {
+  color: var(--syntax-string);
+}
+
+.syn-property {
+  color: var(--syntax-property);
+}
+
+.syn-value {
+  color: var(--syntax-value);
+}
+
+.syn-comment {
+  color: var(--syntax-comment);
+  font-style: italic;
+}
+
+.syn-bracket {
+  color: var(--syntax-bracket);
+}
+
+.syn-fn {
+  color: var(--syntax-fn);
+}
+
+.syn-type {
+  color: var(--syntax-type);
+}
+
+.syn-macro {
+  color: var(--syntax-macro);
+}
+
+/* Line numbers (optional) */
+.code-block--numbered {
+  counter-reset: line;
+}
+
+.code-block--numbered .code-line::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: 2em;
+  margin-right: var(--space-md);
+  color: var(--text-muted);
+  text-align: right;
+}

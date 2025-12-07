@@ -1,6 +1,5 @@
 // Certifications section - Grouped certification badges
-import { CERTIFICATIONS } from "../../constants/data.ts";
-import { SECTION_IDS, UI } from "../../constants/content.ts";
+import { CERTIFICATIONS, SECTION_IDS, UI } from "../../constants/index.ts";
 import { Section } from "../layout/index.ts";
 import { CertGroup } from "./cert-group.tsx";
 

@@ -1,5 +1,5 @@
 // App component - Root component composing all sections
-import { useEffect } from "preact/hooks";
+import { useCallback, useEffect, useState } from "preact/hooks";
 import {
   BackgroundEffects,
   Certifications,
@@ -9,9 +9,28 @@ import {
   Projects,
   Skills,
 } from "./components/index.ts";
+import { DeployGame } from "./components/game/index.ts";
+import { TerminalButton } from "./components/ui/index.ts";
 import { setupScrollAnimations } from "./utils/animations.ts";
+import { useKonamiCode } from "./hooks/index.ts";
 
 export function App() {
+  const [gameOpen, setGameOpen] = useState(false);
+
+  const openGame = useCallback(() => {
+    setGameOpen(true);
+  }, []);
+
+  const closeGame = useCallback(() => {
+    setGameOpen(false);
+  }, []);
+
+  // Easter egg: Konami code opens game
+  useKonamiCode({
+    onSuccess: openGame,
+    enabled: !gameOpen,
+  });
+
   useEffect(() => {
     setupScrollAnimations();
   }, []);
@@ -25,6 +44,8 @@ export function App() {
       <Projects />
       <Certifications />
       <Footer />
+      <TerminalButton onClick={openGame} />
+      <DeployGame isOpen={gameOpen} onClose={closeGame} />
     </>
   );
 }

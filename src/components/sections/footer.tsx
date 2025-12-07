@@ -1,12 +1,12 @@
 // Footer section - Contact links and copyright
-import { SOCIAL_LINKS } from "../../constants/data.ts";
-import { SECTION_IDS, UI } from "../../constants/content.ts";
+import { SECTION_IDS, SOCIAL_LINKS, UI } from "../../constants/index.ts";
 import { Container } from "../layout/index.ts";
 
 export function Footer() {
   return (
     <footer id={SECTION_IDS.contact} class="footer">
       <Container>
+        <p class="footer__go-import">{UI.footer.goImport}</p>
         <div class="footer__links">
           {SOCIAL_LINKS.map((link) => (
             <a

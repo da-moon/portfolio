@@ -1,0 +1,308 @@
+/* ============================================
+   Hero Section
+   ============================================ */
+
+/* Desktop: Side-by-side layout */
+.hero__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+  min-height: 80vh;
+}
+
+.hero__text {
+  text-align: left;
+}
+
+.hero__terminal-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Mobile layout (hidden on desktop) */
+.hero__mobile {
+  display: none;
+  text-align: center;
+}
+
+.hero__content {
+  text-align: center;
+  max-width: 800px;
+}
+
+.hero__greeting {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-md);
+}
+
+.hero__name {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: var(--space-lg);
+  min-height: 1.2em;
+}
+
+.hero__title {
+  font-family: var(--font-mono);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 500;
+  color: var(--accent-cyan);
+  margin-bottom: var(--space-lg);
+}
+
+.hero__tagline {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  max-width: 500px;
+  margin: 0 0 var(--space-xl);
+  line-height: 1.7;
+}
+
+.hero__cta {
+  margin-top: var(--space-xl);
+}
+
+/* ============================================
+   Terminal Window with Chrome
+   ============================================ */
+
+.terminal {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  width: 100%;
+  max-width: 550px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Terminal title bar */
+.terminal__chrome {
+  display: flex;
+  align-items: center;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.terminal__dots {
+  display: flex;
+  gap: 6px;
+}
+
+.terminal__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.terminal__dot--red {
+  background: #ff5f56;
+}
+
+.terminal__dot--yellow {
+  background: #ffbd2e;
+}
+
+.terminal__dot--green {
+  background: #27ca40;
+}
+
+.terminal__title {
+  flex: 1;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.terminal__dots-spacer {
+  width: 54px; /* Same width as dots to center title */
+}
+
+/* Terminal content area */
+.terminal__content {
+  padding: var(--space-lg);
+}
+
+.terminal__command {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+
+.terminal__prompt {
+  color: var(--accent-teal);
+}
+
+.terminal__cmd {
+  color: var(--text-primary);
+}
+
+/* Cursor line */
+.terminal__cursor-line {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+
+.terminal__cursor {
+  width: 8px;
+  height: 1.2em;
+  background: var(--accent-cyan);
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ============================================
+   Rust Build Output
+   ============================================ */
+
+.rust-build {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+}
+
+.rust-build__line {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xs);
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.rust-build__line.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.rust-build__prefix {
+  color: var(--syntax-macro);
+  min-width: 80px;
+}
+
+.rust-build__prefix--compiling {
+  color: var(--syntax-macro);
+}
+
+.rust-build__prefix--building {
+  color: var(--syntax-fn);
+}
+
+.rust-build__prefix--linking {
+  color: var(--syntax-fn);
+}
+
+.rust-build__prefix--finished {
+  color: var(--syntax-string);
+}
+
+.rust-build__prefix--running {
+  color: var(--syntax-string);
+}
+
+.rust-build__text {
+  color: var(--text-secondary);
+}
+
+.rust-build__text--highlight {
+  color: var(--text-primary);
+}
+
+/* Progress bar */
+.rust-build__progress {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex: 1;
+}
+
+.rust-build__progress-bar {
+  flex: 1;
+  height: 8px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.rust-build__progress-fill {
+  height: 100%;
+  background: var(--accent-cyan);
+  width: 0;
+  transition: width 1s ease-out;
+}
+
+.rust-build__progress-fill.complete {
+  width: 100%;
+}
+
+.rust-build__progress-label {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+/* Responsive wrappers */
+.rust-build-wrapper {
+  display: block;
+}
+
+.hero__name-wrapper {
+  display: block;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .hero__layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    min-height: auto;
+    padding: var(--space-2xl) 0;
+  }
+
+  .hero__text {
+    text-align: center;
+    order: 1;
+  }
+
+  .hero__terminal-wrapper {
+    order: 2;
+  }
+
+  .hero__tagline {
+    margin: 0 auto var(--space-xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__layout {
+    display: none;
+  }
+
+  .hero__mobile {
+    display: block;
+    padding: var(--space-2xl) 0;
+  }
+
+  .hero__tagline {
+    margin: 0 auto var(--space-xl);
+  }
+}

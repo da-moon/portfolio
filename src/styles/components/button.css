@@ -1,0 +1,76 @@
+/* ============================================
+   Button Component
+   ============================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-lg);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--accent-cyan);
+  background: transparent;
+  border: 1px solid var(--accent-cyan);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn:hover {
+  background: var(--accent-cyan-dim);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-1px);
+}
+
+.btn--primary {
+  background: var(--accent-cyan);
+  color: var(--bg-primary);
+}
+
+.btn--primary:hover {
+  background: var(--accent-teal);
+  border-color: var(--accent-teal);
+}
+
+/* ============================================
+   Floating Terminal Button (Game trigger)
+   ============================================ */
+
+.terminal-button {
+  position: fixed;
+  bottom: var(--space-xl);
+  right: var(--space-xl);
+  width: 56px;
+  height: 56px;
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 100;
+  transition: all var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.terminal-button:hover {
+  border-color: var(--accent-cyan);
+  box-shadow: var(--shadow-glow);
+  transform: scale(1.1);
+}
+
+.terminal-button__icon {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+}
+
+/* Hide on mobile */
+@media (max-width: 768px) {
+  .terminal-button {
+    display: none;
+  }
+}

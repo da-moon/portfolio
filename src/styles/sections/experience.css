@@ -1,0 +1,184 @@
+/* ============================================
+   Experience Section
+   ============================================ */
+
+/* Experience grid for desktop HCL blocks */
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--space-xl);
+}
+
+/* ============================================
+   HCL Block (Desktop Only)
+   ============================================ */
+
+.hcl-block {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  cursor: pointer;
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.hcl-block:hover {
+  border-color: var(--border-glow);
+  box-shadow: var(--shadow-glow);
+}
+
+.hcl-block--expanded {
+  cursor: default;
+}
+
+.hcl-block__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.hcl-block__keyword {
+  color: var(--syntax-keyword);
+}
+
+.hcl-block__type {
+  color: var(--syntax-string);
+}
+
+.hcl-block__name {
+  color: var(--syntax-string);
+}
+
+.hcl-block__bracket {
+  color: var(--syntax-bracket);
+}
+
+.hcl-block__body {
+  padding-left: var(--space-lg);
+  margin-top: var(--space-sm);
+}
+
+.hcl-block__property {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xs);
+}
+
+.hcl-block__prop-name {
+  color: var(--syntax-property);
+  min-width: 80px;
+}
+
+.hcl-block__prop-equals {
+  color: var(--syntax-bracket);
+}
+
+.hcl-block__prop-value {
+  color: var(--syntax-string);
+}
+
+.hcl-block__prop-value--keyword {
+  color: var(--syntax-value);
+}
+
+/* Chevron expand/collapse indicator */
+.hcl-block__chevron {
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+.hcl-block__chevron-icon {
+  color: var(--accent-cyan);
+  font-size: 0.875rem;
+  transition: transform var(--transition-fast);
+}
+
+.hcl-block--expanded .hcl-block__chevron-icon {
+  display: inline-block;
+}
+
+/* Expandable content */
+.hcl-block__expandable {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.hcl-block--expanded .hcl-block__expandable {
+  max-height: 800px;
+  opacity: 1;
+}
+
+/* List syntax (skills = [...], highlights = [...]) */
+.hcl-block__list {
+  margin: var(--space-sm) 0;
+}
+
+.hcl-block__list-name {
+  color: var(--syntax-property);
+}
+
+.hcl-block__list-items {
+  padding-left: var(--space-lg);
+}
+
+.hcl-block__list-item {
+  color: var(--syntax-string);
+}
+
+.hcl-block__list-item::before {
+  content: '"';
+}
+
+.hcl-block__list-item::after {
+  content: '",';
+}
+
+.hcl-block__list-item:last-child::after {
+  content: '"';
+}
+
+/* Lifecycle block */
+.hcl-block__lifecycle {
+  margin-top: var(--space-md);
+  padding-left: var(--space-lg);
+  border-left: 2px solid var(--border);
+}
+
+.hcl-block__lifecycle-header {
+  color: var(--syntax-keyword);
+  margin-bottom: var(--space-xs);
+}
+
+.hcl-block__lifecycle-comment {
+  color: var(--syntax-comment);
+  font-style: italic;
+}
+
+/* Responsive: HCL on desktop, timeline on mobile */
+.experience-desktop {
+  display: block;
+}
+
+.experience-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .experience-desktop {
+    display: none;
+  }
+
+  .experience-mobile {
+    display: block;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,39 @@
+/* ============================================
+   Footer
+   ============================================ */
+
+.footer {
+  padding: var(--space-2xl) 0;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.footer__links {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-lg);
+}
+
+.footer__link {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.footer__link:hover {
+  color: var(--accent-cyan);
+}
+
+.footer__copy {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.footer__go-import {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--syntax-comment);
+  margin-bottom: var(--space-md);
+}

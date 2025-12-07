@@ -1,0 +1,30 @@
+/* ============================================
+   Terminal Noir - Design System
+   Main CSS Entry Point
+   ============================================ */
+
+/* Foundation */
+@import "./variables.css";
+@import "./base.css";
+@import "./layout.css";
+
+/* Components */
+@import "./components/card.css";
+@import "./components/badge.css";
+@import "./components/button.css";
+@import "./components/terminal.css";
+@import "./components/timeline.css";
+@import "./components/footer.css";
+
+/* Sections */
+@import "./sections/hero.css";
+@import "./sections/skills.css";
+@import "./sections/experience.css";
+
+/* Features */
+@import "./syntax.css";
+@import "./game.css";
+@import "./animations.css";
+
+/* Responsive (must be last) */
+@import "./responsive.css";

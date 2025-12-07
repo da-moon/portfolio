@@ -1,6 +1,6 @@
 // SkillGroup component - Single skill category with badges
-import type { SkillGroup as SkillGroupType } from "../../types/index.ts";
-import { Badge } from "../ui/index.ts";
+import type { SkillGroup as SkillGroupType } from "../../../types/index.ts";
+import { Badge } from "../../ui/index.ts";
 
 interface SkillGroupProps {
   group: SkillGroupType;

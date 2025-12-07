@@ -1,0 +1,58 @@
+/* ============================================
+   CSS Custom Properties (Design Tokens)
+   ============================================ */
+
+:root {
+  /* Colors */
+  --bg-primary: #0a0e17;
+  --bg-secondary: #111827;
+  --bg-card: #1a2332;
+  --bg-card-hover: #222d3d;
+  --text-primary: #e2edf8;
+  --text-secondary: #8b9cb3;
+  --text-muted: #5a6a7d;
+  --accent-cyan: #00d4ff;
+  --accent-teal: #14b8a6;
+  --accent-cyan-dim: rgba(0, 212, 255, 0.15);
+  --border: #2a3a4d;
+  --border-glow: rgba(0, 212, 255, 0.3);
+
+  /* Typography */
+  --font-mono: "JetBrains Mono", "Fira Code", "SF Mono", monospace;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* Borders */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Shadows */
+  --shadow-glow: 0 0 20px rgba(0, 212, 255, 0.15);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.3);
+
+  /* Syntax highlighting (HCL/Rust/Go) */
+  --syntax-keyword: #c678dd;
+  --syntax-string: #98c379;
+  --syntax-property: #e5c07b;
+  --syntax-value: #61afef;
+  --syntax-comment: #5c6370;
+  --syntax-bracket: #abb2bf;
+  --syntax-fn: #61afef;
+  --syntax-type: #e5c07b;
+  --syntax-macro: #c678dd;
+}

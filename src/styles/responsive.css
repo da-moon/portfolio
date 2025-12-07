@@ -1,0 +1,61 @@
+/* ============================================
+   Responsive Breakpoints
+   ============================================ */
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-3xl) 0;
+  }
+
+  .container {
+    padding: 0 var(--space-md);
+  }
+
+  .timeline {
+    padding-left: var(--space-lg);
+  }
+
+  .timeline::before {
+    left: 0;
+  }
+
+  .timeline__item::before {
+    left: calc(-1 * var(--space-lg) - 4px);
+  }
+
+  .footer__links {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  /* Skills grid adjustments */
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  .grid--2,
+  .grid--3,
+  .grid--4 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Cert grid adjustments */
+  .certs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1400px;
+  }
+}

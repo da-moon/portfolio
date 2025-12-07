@@ -1,11 +1,11 @@
-// ExperienceItem component - Single timeline entry
-import type { ExperienceItem as ExperienceItemType } from "../../types/index.ts";
+// Timeline item for experience (Mobile)
+import type { ExperienceItem as ExperienceItemType } from "../../../types/index.ts";
 
-interface ExperienceItemProps {
+interface TimelineItemProps {
   item: ExperienceItemType;
 }
 
-export function ExperienceItem({ item }: ExperienceItemProps) {
+export function TimelineItem({ item }: TimelineItemProps) {
   return (
     <div class="timeline__item">
       <span class="timeline__date">{item.dateRange}</span>
